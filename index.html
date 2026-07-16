@@ -1,0 +1,859 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="IRONCLAD is a premium strength training studio offering state-of-the-art equipment, certified coaches, and an elite environment for dedicated athletes.">
+<meta property="og:title" content="IRONCLAD — Premium Strength Training">
+<meta property="og:description" content="State-of-the-art equipment, certified coaches, and an elite environment for dedicated athletes.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://www.ironclad-studio.com">
+<meta property="og:image" content="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?q=80&w=1200&auto=format&fit=crop">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🏋️</text></svg>">
+<title>IRONCLAD — Premium Strength Training Studio</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  /* ============================= */
+  /* TOKENS & RESET                */
+  /* ============================= */
+  :root {
+    --black: #0a0a0a;
+    --charcoal: #141414;
+    --charcoal-light: #1d1d1d;
+    --line: #2b2b2b;
+    --white: #f3f2ee;
+    --gray: #8c8c88;
+    --red: #e0261c;
+    --red-dim: #7a1712;
+    --display: 'Bebas Neue', sans-serif;
+    --body: 'Inter', sans-serif;
+    --radius-lg: 24px;
+    --radius-md: 16px;
+    --radius-sm: 10px;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--black);
+    color: var(--white);
+    font-family: var(--body);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  img { display: block; width: 100%; height: 100%; object-fit: cover; }
+
+  a { color: inherit; text-decoration: none; }
+
+  ul { list-style: none; }
+
+  h1, h2, h3, h4 {
+    font-family: var(--display);
+    font-weight: 400;
+    letter-spacing: 0.02em;
+    line-height: 1.02;
+    text-transform: uppercase;
+  }
+
+  .eyebrow {
+    font-family: var(--body);
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--red);
+    display: block;
+  }
+
+  .section-head {
+    max-width: 640px;
+    margin: 0 0 4rem;
+  }
+  .section-head h2 { font-size: clamp(2.4rem, 5vw, 3.6rem); margin-top: 0.6rem; }
+  .section-head p { color: var(--gray); margin-top: 1rem; font-size: 1.05rem; max-width: 520px; }
+
+  .wrap {
+    max-width: 1180px;
+    margin: 0 auto;
+    padding: 0 2.5rem;
+  }
+
+  section { padding: 7rem 0; }
+
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.6rem;
+    padding: 1rem 2.1rem;
+    border-radius: 100px;
+    font-family: var(--body);
+    font-weight: 600;
+    font-size: 0.92rem;
+    letter-spacing: 0.02em;
+    border: 1px solid transparent;
+    cursor: pointer;
+    transition: transform 0.15s ease, background 0.15s ease, border-color .15s ease;
+  }
+  .btn-primary { background: var(--red); color: var(--white); }
+  .btn-primary:hover { transform: translateY(-2px); background: #f13228; }
+  .btn-outline { border-color: var(--line); color: var(--white); background: transparent; }
+  .btn-outline:hover { border-color: var(--white); }
+
+  /* ============================= */
+  /* NAV                           */
+  /* ============================= */
+  header.nav {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: rgba(10, 10, 10, 0.82);
+    backdrop-filter: blur(14px);
+    border-bottom: 1px solid var(--line);
+  }
+  .nav-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1.15rem 2.5rem;
+    max-width: 1180px;
+    margin: 0 auto;
+  }
+  .logo {
+    font-family: var(--display);
+    font-size: 1.5rem;
+    letter-spacing: 0.06em;
+  }
+  .logo span { color: var(--red); }
+  .nav-links {
+    display: flex;
+    gap: 2.4rem;
+    font-size: 0.88rem;
+    font-weight: 500;
+  }
+  .nav-links a { color: var(--gray); transition: color .15s ease; }
+  .nav-links a:hover { color: var(--white); }
+  .nav-cta { display: flex; align-items: center; }
+
+  /* ============================= */
+  /* HERO                          */
+  /* ============================= */
+  .hero {
+    position: relative;
+    padding: 6rem 0 5rem;
+    overflow: hidden;
+  }
+  .hero-grid {
+    display: grid;
+    grid-template-columns: 1.1fr 0.9fr;
+    gap: 3rem;
+    align-items: center;
+  }
+  .hero h1 {
+    font-size: clamp(3.4rem, 7.4vw, 6.4rem);
+    margin-top: 1rem;
+  }
+  .hero h1 em {
+    font-style: normal;
+    color: var(--red);
+  }
+  .hero p.lead {
+    color: var(--gray);
+    max-width: 460px;
+    margin: 1.6rem 0 2.4rem;
+    font-size: 1.08rem;
+  }
+  .hero-actions { display: flex; gap: 1rem; align-items: center; flex-wrap: wrap; }
+  .hero-stats {
+    display: flex;
+    gap: 2.6rem;
+    margin-top: 3.2rem;
+    padding-top: 2.2rem;
+    border-top: 1px solid var(--line);
+  }
+  .hero-stats div strong {
+    display: block;
+    font-family: var(--display);
+    font-size: 2.1rem;
+    color: var(--white);
+  }
+  .hero-stats div span {
+    font-size: 0.78rem;
+    color: var(--gray);
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+  }
+  .hero-media {
+    position: relative;
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    aspect-ratio: 4/5;
+    isolation: isolate;
+  }
+  .hero-media img { height: 100%; }
+  .hero-media::after {
+    content: "";
+    position: absolute; inset: 0;
+    background: linear-gradient(180deg, rgba(10, 10, 10, 0) 40%, rgba(10, 10, 10, 0.85) 100%);
+  }
+  .hero-media .tag {
+    position: absolute;
+    bottom: 1.4rem; left: 1.4rem;
+    z-index: 2;
+    background: rgba(10, 10, 10, 0.7);
+    border: 1px solid var(--line);
+    backdrop-filter: blur(6px);
+    padding: 0.7rem 1.1rem;
+    border-radius: 100px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+  .hero-media .tag::before {
+    content: "";
+    width: 8px; height: 8px;
+    border-radius: 50%;
+    background: var(--red);
+  }
+
+  /* ============================= */
+  /* FEATURES                      */
+  /* ============================= */
+  .features { background: var(--charcoal); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+  .feature-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.4rem;
+  }
+  .feature-card {
+    background: var(--charcoal-light);
+    border: 1px solid var(--line);
+    border-radius: var(--radius-md);
+    padding: 2.2rem 1.8rem;
+    transition: border-color .15s ease, transform .15s ease;
+  }
+  .feature-card:hover { border-color: var(--red-dim); transform: translateY(-4px); }
+  .feature-num {
+    font-family: var(--display);
+    font-size: 1rem;
+    color: var(--red);
+    letter-spacing: 0.05em;
+  }
+  .feature-card h3 {
+    font-size: 1.5rem;
+    margin: 1rem 0 0.7rem;
+  }
+  .feature-card p { color: var(--gray); font-size: 0.95rem; }
+
+  /* ============================= */
+  /* MEMBERSHIP PLANS              */
+  /* ============================= */
+  .plans-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.6rem;
+    align-items: stretch;
+  }
+  .plan-card {
+    background: var(--charcoal);
+    border: 1px solid var(--line);
+    border-radius: var(--radius-lg);
+    padding: 2.6rem 2.2rem;
+    display: flex;
+    flex-direction: column;
+  }
+  .plan-card.featured {
+    background: linear-gradient(165deg, #1c1010, var(--charcoal));
+    border-color: var(--red);
+    transform: scale(1.045);
+    position: relative;
+    box-shadow: 0 20px 60px -20px rgba(224, 38, 28, 0.35);
+  }
+  .plan-badge {
+    position: absolute;
+    top: -14px; left: 50%;
+    transform: translateX(-50%);
+    background: var(--red);
+    color: var(--white);
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    padding: 0.4rem 1rem;
+    border-radius: 100px;
+  }
+  .plan-name { font-family: var(--display); font-size: 1.6rem; letter-spacing: 0.03em; }
+  .plan-price { margin: 1.2rem 0 1.6rem; display: flex; align-items: baseline; gap: 0.4rem; }
+  .plan-price strong { font-family: var(--display); font-size: 3.2rem; }
+  .plan-price span { color: var(--gray); font-size: 0.95rem; }
+  .plan-list { flex: 1; margin-bottom: 2rem; }
+  .plan-list li {
+    padding: 0.65rem 0;
+    border-top: 1px solid var(--line);
+    color: var(--gray);
+    font-size: 0.93rem;
+    display: flex;
+    gap: 0.6rem;
+    align-items: center;
+  }
+  .plan-list li:first-child { border-top: none; }
+  .plan-list li::before { content: "—"; color: var(--red); }
+  .plan-card .btn { width: 100%; }
+
+  /* ============================= */
+  /* TRAINERS                      */
+  /* ============================= */
+  .trainers { background: var(--charcoal); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+  .trainer-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.6rem;
+  }
+  .trainer-card {
+    background: var(--charcoal-light);
+    border: 1px solid var(--line);
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+  }
+  .trainer-photo { aspect-ratio: 3/4; position: relative; }
+  .trainer-photo img { filter: grayscale(35%); }
+  .trainer-info { padding: 1.6rem 1.6rem 1.9rem; }
+  .trainer-info h3 { font-size: 1.5rem; }
+  .trainer-role { color: var(--red); font-size: 0.8rem; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; margin: 0.3rem 0 0.9rem; }
+  .trainer-info p { color: var(--gray); font-size: 0.92rem; }
+
+  /* ============================= */
+  /* TESTIMONIALS                  */
+  /* ============================= */
+  .testi-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.6rem;
+  }
+  .testi-card {
+    background: var(--charcoal);
+    border: 1px solid var(--line);
+    border-radius: var(--radius-lg);
+    padding: 2.4rem 2rem;
+    display: flex;
+    flex-direction: column;
+  }
+  .testi-quote { font-size: 1.32rem; line-height: 1.5; margin-bottom: 1.8rem; flex: 1; font-style: italic; color: var(--white); }
+  .testi-quote::before { content: "“"; color: var(--red); font-family: var(--display); font-size: 1.4rem; margin-right: 4px; }
+  .testi-person { display: flex; align-items: center; gap: 0.9rem; }
+  .testi-avatar { width: 46px; height: 46px; border-radius: 50%; overflow: hidden; flex-shrink: 0; }
+  .testi-person strong { display: block; font-size: 0.95rem; font-style: normal; }
+  .testi-person span { color: var(--gray); font-size: 0.8rem; font-style: normal; }
+
+  /* ============================= */
+  /* GALLERY                       */
+  /* ============================= */
+  .gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-auto-rows: 180px;
+    gap: 0.9rem;
+  }
+  .gallery-grid a { border-radius: var(--radius-sm); overflow: hidden; display: block; }
+  .gallery-grid img { transition: transform .3s ease; }
+  .gallery-grid a:hover img { transform: scale(1.06); }
+  .g-tall { grid-row: span 2; }
+  .g-wide { grid-column: span 2; }
+
+  /* ============================= */
+  /* CONTACT                       */
+  /* ============================= */
+  .contact { background: var(--charcoal); border-top: 1px solid var(--line); }
+  .contact-grid {
+    display: grid;
+    grid-template-columns: 0.9fr 1.1fr;
+    gap: 3.5rem;
+  }
+  .contact-info h2 { font-size: clamp(2.2rem, 4.6vw, 3rem); margin-top: 0.6rem; }
+  .contact-info p { color: var(--gray); margin: 1.2rem 0 2rem; max-width: 400px; }
+  .contact-detail { margin-bottom: 1.4rem; }
+  .contact-detail span { display: block; font-size: 0.76rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--red); margin-bottom: 0.3rem; }
+  .contact-detail strong { font-weight: 600; font-size: 1rem; }
+
+  form.contact-form {
+    background: var(--charcoal-light);
+    border: 1px solid var(--line);
+    border-radius: var(--radius-lg);
+    padding: 2.4rem;
+    display: grid;
+    gap: 1.1rem;
+  }
+  .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1.1rem; }
+  form.contact-form label { font-size: 0.78rem; color: var(--gray); letter-spacing: 0.04em; text-transform: uppercase; margin-bottom: 0.5rem; display: block; }
+  form.contact-form input,
+  form.contact-form textarea {
+    width: 100%;
+    background: var(--black);
+    border: 1px solid var(--line);
+    border-radius: var(--radius-sm);
+    padding: 0.9rem 1rem;
+    color: var(--white);
+    font-family: var(--body);
+    font-size: 0.95rem;
+    resize: none;
+  }
+  form.contact-form input:focus,
+  form.contact-form textarea:focus { outline: none; border-color: var(--red); }
+  form.contact-form textarea { min-height: 110px; }
+  form.contact-form .btn { margin-top: 0.4rem; }
+
+  /* ============================= */
+  /* FOOTER                        */
+  /* ============================= */
+  footer { padding: 3.5rem 0 2.2rem; }
+  .footer-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    gap: 2.4rem;
+    padding-bottom: 2.4rem;
+    border-bottom: 1px solid var(--line);
+  }
+  .footer-cols { display: flex; gap: 4rem; flex-wrap: wrap; }
+  .footer-col h4 { font-family: var(--body); font-weight: 600; font-size: 0.82rem; letter-spacing: 0.06em; text-transform: uppercase; color: var(--gray); margin-bottom: 1rem; }
+  .footer-col a { display: block; color: var(--white); font-size: 0.92rem; margin-bottom: 0.65rem; opacity: 0.85; transition: color 0.15s ease, opacity 0.15s ease; }
+  .footer-col a:hover { color: var(--red); opacity: 1; }
+  .footer-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+    padding-top: 1.8rem;
+    color: var(--gray);
+    font-size: 0.82rem;
+  }
+  .footer-social { display: flex; gap: 1.1rem; }
+  .footer-social a { color: var(--gray); transition: color 0.15s ease; }
+  .footer-social a:hover { color: var(--red); }
+
+  /* ============================= */
+  /* RESPONSIVE                    */
+  /* ============================= */
+  @media (max-width: 980px) {
+    .feature-grid { grid-template-columns: repeat(2, 1fr); }
+    .plans-grid { grid-template-columns: 1fr; }
+    .plan-card.featured { transform: none; order: -1; }
+    .trainer-grid { grid-template-columns: repeat(2, 1fr); }
+    .testi-grid { grid-template-columns: 1fr; }
+    .gallery-grid { grid-template-columns: repeat(2, 1fr); }
+    .contact-grid { grid-template-columns: 1fr; }
+    .hero-grid { grid-template-columns: 1fr; }
+    .hero-media { aspect-ratio: 16/10; order: -1; }
+  }
+
+  @media (max-width: 640px) {
+    .wrap { padding: 0 1.4rem; }
+    section { padding: 4.5rem 0; }
+    .nav-links { display: none; }
+    .feature-grid { grid-template-columns: 1fr; }
+    .trainer-grid { grid-template-columns: 1fr; }
+    .gallery-grid { grid-template-columns: repeat(2, 1fr); grid-auto-rows: 130px; }
+    .g-wide { grid-column: span 2; }
+    .form-row { grid-template-columns: 1fr; }
+    .hero-stats { gap: 1.6rem; flex-wrap: wrap; }
+    .footer-top { flex-direction: column; }
+  }
+</style>
+</head>
+<body>
+
+  <!-- ============================= -->
+  <!-- NAVIGATION                    -->
+  <!-- ============================= -->
+  <header class="nav">
+    <div class="nav-inner">
+      <a href="#top" class="logo" aria-label="Ironclad Home">IRON<span>CLAD</span></a>
+      <nav class="nav-links" aria-label="Main Navigation">
+        <a href="#features">Why Us</a>
+        <a href="#plans">Membership</a>
+        <a href="#trainers">Trainers</a>
+        <a href="#gallery">Gallery</a>
+        <a href="#contact">Contact</a>
+      </nav>
+      <div class="nav-cta">
+        <a href="#plans" class="btn btn-primary">Join Now</a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- ============================= -->
+    <!-- HERO                          -->
+    <!-- ============================= -->
+    <section class="hero" id="top">
+      <div class="wrap hero-grid">
+        <div class="hero-copy">
+          <span class="eyebrow">Est. 2016 — Premium Fitness Studio</span>
+          <h1>Train like it's <em>the only</em> hour that counts.</h1>
+          <p class="lead">We built Ironclad for people who take their training seriously. Elite equipment, certified coaches, and an environment designed for total focus.</p>
+          <div class="hero-actions">
+            <a href="#contact" class="btn btn-primary">Claim Your Trial</a>
+            <a href="#trainers" class="btn btn-outline">Meet the Coaches</a>
+          </div>
+          <div class="hero-stats">
+            <div><strong>12+</strong><span>Years Active</span></div>
+            <div><strong>4,200</strong><span>Members Strong</span></div>
+            <div><strong>98%</strong><span>Retention Rate</span></div>
+          </div>
+        </div>
+        <div class="hero-media">
+          <img src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?q=80&w=1200&auto=format&fit=crop" alt="Athlete performing a heavy deadlift in a professional gym environment">
+          <span class="tag">Open Daily • 5:00 AM – 11:00 PM</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================= -->
+    <!-- FEATURES                      -->
+    <!-- ============================= -->
+    <section class="features" id="features">
+      <div class="wrap">
+        <div class="section-head">
+          <span class="eyebrow">Why Ironclad</span>
+          <h2>Built different, on purpose.</h2>
+          <p>Every aspect of our facility is engineered to remove distractions and help you train with absolute consistency.</p>
+        </div>
+        <div class="feature-grid">
+          <article class="feature-card">
+            <span class="feature-num">01</span>
+            <h3>Unrestricted Access</h3>
+            <p>Train on your schedule with full access to the entire floor, every single day of the week.</p>
+          </article>
+          <article class="feature-card">
+            <span class="feature-num">02</span>
+            <h3>Elite Equipment</h3>
+            <p>Imported cardio machines and commercial-grade strength racks, maintained to impeccable standards.</p>
+          </article>
+          <article class="feature-card">
+            <span class="feature-num">03</span>
+            <h3>Expert Coaching</h3>
+            <p>Work with certified trainers who monitor your form, track your progress, and adjust your routine.</p>
+          </article>
+          <article class="feature-card">
+            <span class="feature-num">04</span>
+            <h3>Secure Storage</h3>
+            <p>Dedicated personal lockers so you can focus entirely on your training without worrying about belongings.</p>
+          </article>
+          <article class="feature-card">
+            <span class="feature-num">05</span>
+            <h3>Nutrition Guidance</h3>
+            <p>One-on-one consulting from our in-house nutritionists to perfectly complement your physical goals.</p>
+          </article>
+          <article class="feature-card">
+            <span class="feature-num">06</span>
+            <h3>Group Training</h3>
+            <p>Join small, high-intensity group classes led by our coaches, ranging from HIIT to mobility work.</p>
+          </article>
+          <article class="feature-card">
+            <span class="feature-num">07</span>
+            <h3>Premium Recovery</h3>
+            <p>Accelerate your recovery with our dedicated steam room and meticulously cleaned shower facilities.</p>
+          </article>
+          <article class="feature-card">
+            <span class="feature-num">08</span>
+            <h3>Introductory Session</h3>
+            <p>Experience the standard firsthand. Walk in for a complimentary, guided session before making a commitment.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================= -->
+    <!-- MEMBERSHIP PLANS              -->
+    <!-- ============================= -->
+    <section class="plans" id="plans">
+      <div class="wrap">
+        <div class="section-head">
+          <span class="eyebrow">Membership Options</span>
+          <h2>Select your commitment.</h2>
+          <p>No hidden fees or lock-in contracts. Upgrade, downgrade, or pause your membership as your life requires.</p>
+        </div>
+        <div class="plans-grid">
+          <article class="plan-card">
+            <h3 class="plan-name">Monthly</h3>
+            <div class="plan-price"><strong>₹1,499</strong><span>/ month</span></div>
+            <ul class="plan-list">
+              <li>Unrestricted facility access</li>
+              <li>Elite strength & cardio equipment</li>
+              <li>Secure locker access</li>
+              <li>Complimentary introductory session</li>
+            </ul>
+            <a href="#contact" class="btn btn-outline">Select Monthly</a>
+          </article>
+
+          <article class="plan-card">
+            <h3 class="plan-name">Half Yearly</h3>
+            <div class="plan-price"><strong>₹7,999</strong><span>/ 6 Months</span></div>
+            <ul class="plan-list">
+              <li>Unrestricted facility access</li>
+              <li>Access to expert coaches</li>
+              <li>All group training classes</li>
+              <li>Secure locker access</li>
+              <li>Premium steam & shower facilities</li>
+            </ul>
+            <a href="#contact" class="btn btn-outline">Select Half Yearly</a>
+          </article>
+
+          <article class="plan-card featured">
+            <span class="plan-badge">Optimal Value</span>
+            <h3 class="plan-name">Yearly</h3>
+            <div class="plan-price"><strong>₹11,999</strong><span>/ Year</span></div>
+            <ul class="plan-list">
+              <li>Unrestricted facility access</li>
+              <li>Priority access to expert coaches</li>
+              <li>Monthly nutrition check-ins</li>
+              <li>All group training classes</li>
+              <li>Premium steam & shower facilities</li>
+              <li>Dedicated permanent locker</li>
+            </ul>
+            <a href="#contact" class="btn btn-primary">Select Yearly</a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================= -->
+    <!-- TRAINERS                      -->
+    <!-- ============================= -->
+    <section class="trainers" id="trainers">
+      <div class="wrap">
+        <div class="section-head">
+          <span class="eyebrow">The Coaching Team</span>
+          <h2>Guided by professionals.</h2>
+          <p>We maintain a small roster of highly qualified specialists ensuring every member receives authentic, personalized attention.</p>
+        </div>
+        <div class="trainer-grid">
+          <article class="trainer-card">
+            <div class="trainer-photo">
+              <img src="https://images.unsplash.com/photo-1594381898411-846e7d193883?q=80&w=800&auto=format&fit=crop" alt="Coach Rohan Mehta, Strength & Conditioning Specialist">
+            </div>
+            <div class="trainer-info">
+              <h3>Rohan Mehta</h3>
+              <div class="trainer-role">Strength & Conditioning</div>
+              <p>Former state-level powerlifter with over a decade of experience optimizing raw strength and functional conditioning.</p>
+            </div>
+          </article>
+
+          <article class="trainer-card">
+            <div class="trainer-photo">
+              <img src="https://images.unsplash.com/photo-1571019614242-c5c5dee9f50b?q=80&w=800&auto=format&fit=crop" alt="Coach Ananya Sharma, Performance & Mobility Expert">
+            </div>
+            <div class="trainer-info">
+              <h3>Ananya Sharma</h3>
+              <div class="trainer-role">Performance & Mobility</div>
+              <p>Specializes in athletic longevity, injury prevention protocols, and developing robust, long-term mobility.</p>
+            </div>
+          </article>
+
+          <article class="trainer-card">
+            <div class="trainer-photo">
+              <img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?q=80&w=800&auto=format&fit=crop" alt="Coach Karan Desai, Hypertrophy & Nutrition Consultant">
+            </div>
+            <div class="trainer-info">
+              <h3>Karan Desai</h3>
+              <div class="trainer-role">Hypertrophy & Nutrition</div>
+              <p>Certified clinical nutritionist and hypertrophy coach dedicated to sustainable, science-backed muscle growth.</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================= -->
+    <!-- TESTIMONIALS                  -->
+    <!-- ============================= -->
+    <section class="testimonials" aria-labelledby="testimonials-heading">
+      <div class="wrap">
+        <div class="section-head">
+          <span class="eyebrow">Member Outcomes</span>
+          <h2 id="testimonials-heading">Results, not promises.</h2>
+        </div>
+        <div class="testi-grid">
+          <article class="testi-card">
+            <blockquote class="testi-quote">
+              I've trained at several commercial gyms before finding Ironclad. This is the first facility where the coaching actually translates into measurable progress.
+            </blockquote>
+            <cite class="testi-person">
+              <div class="testi-avatar">
+                <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?q=80&w=200&auto=format&fit=crop" alt="Sneha Patel">
+              </div>
+              <div>
+                <strong>Sneha Patel</strong>
+                <span>Yearly Member, 2 yrs</span>
+              </div>
+            </cite>
+          </article>
+
+          <article class="testi-card">
+            <blockquote class="testi-quote">
+              I dropped 14 kilos while actively increasing my numbers on every major lift. The programming here is genuinely tailored to your mechanics, not a generic printout.
+            </blockquote>
+            <cite class="testi-person">
+              <div class="testi-avatar">
+                <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&w=200&auto=format&fit=crop" alt="Aditya Rao">
+              </div>
+              <div>
+                <strong>Aditya Rao</strong>
+                <span>Half Yearly Member, 1 yr</span>
+              </div>
+            </cite>
+          </article>
+
+          <article class="testi-card">
+            <blockquote class="testi-quote">
+              The capped class sizes make an incredible difference. My coach knows my exact injury history and seamlessly adjusts my workload every single session.
+            </blockquote>
+            <cite class="testi-person">
+              <div class="testi-avatar">
+                <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=200&auto=format&fit=crop" alt="Priya Nair">
+              </div>
+              <div>
+                <strong>Priya Nair</strong>
+                <span>Monthly Member, 8 mo</span>
+              </div>
+            </cite>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================= -->
+    <!-- GALLERY                       -->
+    <!-- ============================= -->
+    <section class="gallery" id="gallery">
+      <div class="wrap">
+        <div class="section-head">
+          <span class="eyebrow">Facility Tour</span>
+          <h2>Inside the studio.</h2>
+        </div>
+        <div class="gallery-grid">
+          <a href="#" class="g-tall" aria-label="View large training floor image">
+            <img src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?q=80&w=800&auto=format&fit=crop" alt="Spacious weight training floor at Ironclad">
+          </a>
+          <a href="#" aria-label="View cardio equipment image">
+            <img src="https://images.unsplash.com/photo-1576678927484-cc907957088c?q=80&w=600&auto=format&fit=crop" alt="Premium cardio machines and treadmills">
+          </a>
+          <a href="#" class="g-wide" aria-label="View group class area image">
+            <img src="https://images.unsplash.com/photo-1518611012118-696072aa579a?q=80&w=1200&auto=format&fit=crop" alt="Members participating in a high-intensity group class">
+          </a>
+          <a href="#" aria-label="View strength racks image">
+            <img src="https://images.unsplash.com/photo-1540497077202-7c8a3999166f?q=80&w=600&auto=format&fit=crop" alt="Heavy duty power racks and barbells">
+          </a>
+          <a href="#" aria-label="View locker room image">
+            <img src="https://images.unsplash.com/photo-1571019614242-c5c5dee9f50b?q=80&w=600&auto=format&fit=crop" alt="Clean, modern locker room facilities">
+          </a>
+          <a href="#" class="g-tall" aria-label="View free weights image">
+            <img src="https://images.unsplash.com/photo-1517836357463-d25dfeac3438?q=80&w=800&auto=format&fit=crop" alt="Extensive dumbbell and free weight section">
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================= -->
+    <!-- CONTACT                       -->
+    <!-- ============================= -->
+    <section class="contact" id="contact">
+      <div class="wrap contact-grid">
+        <div class="contact-info">
+          <span class="eyebrow">Take the Next Step</span>
+          <h2>Ready to put in the work?</h2>
+          <p>Schedule your complimentary trial session or reach out with any questions. Message us directly on WhatsApp and our team will get back to you today.</p>
+
+          <address style="font-style: normal;">
+            <div class="contact-detail">
+              <span>Location</span>
+              <strong>3rd Floor, Foundry Heights, Alkapuri, Vadodara, Gujarat 390007</strong>
+            </div>
+            <div class="contact-detail">
+              <span>Direct Line / WhatsApp</span>
+              <strong>+91 9876 000 00</strong>
+            </div>
+            <div class="contact-detail">
+              <span>Operating Hours</span>
+              <strong>Daily • 5:00 AM – 11:00 PM</strong>
+            </div>
+          </address>
+        </div>
+
+        <form class="contact-form" onsubmit="event.preventDefault();">
+          <div class="form-row">
+            <div>
+              <label for="fname">First Name</label>
+              <input type="text" id="fname" name="fname" placeholder="Enter your first name" required>
+            </div>
+            <div>
+              <label for="lname">Last Name</label>
+              <input type="text" id="lname" name="lname" placeholder="Enter your last name" required>
+            </div>
+          </div>
+          <div>
+            <label for="email">Email Address</label>
+            <input type="email" id="email" name="email" placeholder="you@example.com" required>
+          </div>
+          <div>
+            <label for="message">Your Message</label>
+            <textarea id="message" name="message" placeholder="Tell us about your current training routine and goals..." required></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary">Submit Inquiry</button>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <!-- ============================= -->
+  <!-- FOOTER                        -->
+  <!-- ============================= -->
+  <footer>
+    <div class="wrap">
+      <div class="footer-top">
+        <div>
+          <a href="#top" class="logo" aria-label="Ironclad Home">IRON<span>CLAD</span></a>
+          <p style="color:var(--gray); max-width:280px; margin-top:1rem; font-size:0.9rem;">A premium strength and conditioning studio built for individuals who train with absolute intent.</p>
+        </div>
+        <div class="footer-cols">
+          <div class="footer-col">
+            <h4>Facility</h4>
+            <a href="#features">Why Choose Us</a>
+            <a href="#trainers">Our Coaches</a>
+            <a href="#gallery">Studio Gallery</a>
+          </div>
+          <div class="footer-col">
+            <h4>Membership</h4>
+            <a href="#plans">Plans & Pricing</a>
+            <a href="#contact">Book a Trial</a>
+          </div>
+          <div class="footer-col">
+            <h4>Connect</h4>
+            <a href="#contact">Alkapuri, Vadodara</a>
+            <a href="#contact">+91 9876 000 00</a>
+            <a href="#contact">WhatsApp Support</a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© 2026 WebN. All rights reserved.</span>
+        <div class="footer-social">
+          <a href="#" aria-label="Follow us on Instagram">Instagram</a>
+          <a href="#" aria-label="Follow us on TikTok">TikTok</a>
+          <a href="#" aria-label="Subscribe to our YouTube channel">YouTube</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>
